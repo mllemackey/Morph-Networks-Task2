@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="A Game in Vanilla JavaScript">
+    <meta name="author" content="Marina Toromanovic">
+    <title>Numbers & Shapes</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<header>
+    <div class="container d-md-flex justify-content-md-around align-items-center p-3">
+        <div>
+            <h1 class="jumbotron-heading">Numbers & Shapes</h1>
+        </div>
+        <div class="ml-auto mr-3 border-right">
+            <h3>Difficulty:</h3>
+            <input type="radio" name="difficulty" id="easy" value="5000" checked/><label for="easy">Easy</label>
+            <input type="radio" name="difficulty" id="medium" value="3000"/><label for="medium">Medium</label>
+            <input type="radio" name="difficulty" id="hard" value="2000"/><label for="hard">Hard</label>
+        </div>
+        <div>
+            <h3>Score:</h3>
+            <ul>
+                <li class="score green">HIT: <span id="hit">0</span></li>
+                <li class="score red">MISS: <span id="miss">0</span></li>
+                <li class="score">LEFT: <span id="left">26</span></li>
+            </ul>
+        </div>
+    </div>
+</header>
+
+<main role="main">
+
+    <section class="jumbotron text-center p-3 m-0">
+        <div class="container">
+            <p>
+                <a class="btn btn-primary my-2" id="start_game">Start Game</a>
+            </p>
+            <p id="random_number">0</p>
+            <p>
+                <input type="text" id="input_letter" disabled/>
+            </p>
+        </div>
+    </section>
+
+    <div class="letters py-5 bg-light">
+        <div class="container">
+            <div class="row d-flex text-center">
+                <div class="col-sm-2">
+                    <p class="letter-num"><span class="letter">A</span> (<span class="number">1</span>)</p>
+                </div>
+                <div class="col-sm-2">
+                    <p class="letter-num"><span class="letter">B</span> (<span class="number">2</span>)</p>
+                </div>
+                <div class="col-sm-2">
+                    <p class="letter-num"><span class="letter">C</span> (<span class="number">3</span>)</p>
+                </div>
+                <div class="col-sm-2">
+                    <p class="letter-num"><span class="letter">D</span> (<span class="number">4</span>)</p>
+                </div>
+                <div class="col-sm-2">
+                    <p class="letter-num"><span class="letter">E</span> (<span class="number">5</span>)</p>
+                </div>
+                <div class="col-sm-2">
+                    <p class="letter-num"><span class="letter">F</span> (<span class="number">6</span>)</p>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-sm-2">
+                    <p class="letter-num"><span class="letter">G</span> (<span class="number">7</span>)</p>
+                </div>
+                <div class="col-sm-2">
+                    <p class="letter-num"><span class="letter">H</span> (<span class="number">8</span>)</p>
+                </div>
+                <div class="col-sm-2">
+                    <p class="letter-num"><span class="letter">I</span> (<span class="number">9</span>)</p>
+                </div>
+                <div class="col-sm-2">
+                    <p class="letter-num"><span class="letter">J</span> (<span class="number">10</span>)</p>
+                </div>
+                <div class="col-sm-2">
+                    <p class="letter-num"><span class="letter">K</span> (<span class="number">11</span>)</p>
+                </div>
+                <div class="col-sm-2">
+                    <p class="letter-num"><span class="letter">L</span> (<span class="number">12</span>)</p>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-sm-2">
+                    <p class="letter-num"><span class="letter">M</span> (<span class="number">13</span>)</p>
+                </div>
+                <div class="col-sm-2">
+                    <p class="letter-num"><span class="letter">N</span> (<span class="number">14</span>)</p>
+                </div>
+                <div class="col-sm-2">
+                    <p class="letter-num"><span class="letter">O</span> (<span class="number">15</span>)</p>
+                </div>
+                <div class="col-sm-2">
+                    <p class="letter-num"><span class="letter">P</span> (<span class="number">16</span>)</p>
+                </div>
+                <div class="col-sm-2">
+                    <p class="letter-num"><span class="letter">Q</span> (<span class="number">17</span>)</p>
+                </div>
+                <div class="col-sm-2">
+                    <p class="letter-num"><span class="letter">R</span> (<span class="number">18</span>)</p>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-sm-2">
+                    <p class="letter-num"><span class="letter">S</span> (<span class="number">19</span>)</p>
+                </div>
+                <div class="col-sm-2">
+                    <p class="letter-num"><span class="letter">T</span> (<span class="number">20</span>)</p>
+                </div>
+                <div class="col-sm-2">
+                    <p class="letter-num"><span class="letter">U</span> (<span class="number">21</span>)</p>
+                </div>
+                <div class="col-sm-2">
+                    <p class="letter-num"><span class="letter">V</span> (<span class="number">22</span>)</p>
+                </div>
+                <div class="col-sm-2">
+                    <p class="letter-num"><span class="letter">W</span> (<span class="number">23</span>)</p>
+                </div>
+                <div class="col-sm-2">
+                    <p class="letter-num"><span class="letter">X</span> (<span class="number">24</span>)</p>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-sm-2">
+                    <p class="letter-num"><span class="letter">Y</span> (<span class="number">25</span>)</p>
+                </div>
+                <div class="col-sm-2">
+                    <p class="letter-num"><span class="letter">Z</span> (<span class="number">26</span>)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+<footer class="text-muted">
+    <div class="container py-3">
+        <p class="float-right">
+            <a href="#">Back to top</a>
+        </p>
+        <footer>
+            <p>&copy; <a href="https://mllemackey.com">mllemackey.com</a>
+                <script>
+                    var CurrentYear = new Date().getFullYear()
+                    document.write(CurrentYear)
+                </script>
+            </p>
+        </footer>
+    </div>
+</footer>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

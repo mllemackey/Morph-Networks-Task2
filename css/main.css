@@ -1,0 +1,54 @@
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+@media screen and (max-width: 767px){
+    .border-right{
+        border-right: none !important;
+    }
+}
+
+ul{
+    overflow: hidden;
+}
+
+li{
+    float: left;
+    margin-right: 50px;
+}
+
+label{
+    margin-right: 20px;
+    margin-left: 5px;
+}
+
+.letters .col-sm-2{
+    font-size: 30px;
+    line-height: 1.4;
+}
+.red{
+    color: red;
+}
+.green{
+    color: green;
+}
+p#random_number {
+    font-size: 50px;
+    font-weight: bold;
+}
+a.btn-primary{
+    color: #fff !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
